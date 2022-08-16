@@ -10,7 +10,6 @@ import debounce from "debounce";
 import lzutf8 from "lzutf8";
 import { editor, KeyCode, KeyMod, MarkerSeverity, Uri } from "monaco-editor";
 import { FunctionComponent, useCallback, useEffect, useMemo, useState } from "react";
-import "swagger-ui-react/swagger-ui.css";
 import { CompletionItemTag } from "vscode-languageserver";
 import { createBrowserHost } from "./browser-host";
 import { CadlEditor } from "./components/cadl-editor";
@@ -246,8 +245,8 @@ export const OutputView: FunctionComponent<OutputViewProps> = (props) => {
     }
   }, []);
   const content =
-    viewSelection.type === "file"? (
-      <OpenAPIOutput content={viewSelection.content} />
+    viewSelection.type === "file" ? (
+      <OutputEditor value={viewSelection.content} />
     ) : viewSelection.type === "errors" ? (
       <ErrorTab internalCompilerError={props.internalCompilerError} diagnostics={diagnostics} />
     ) : (
