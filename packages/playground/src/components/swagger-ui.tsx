@@ -17,5 +17,9 @@ export const SwaggerUI: FunctionComponent<SwaggerUIProps> = (props) => {
     }
   }, [props.spec]);
 
+<<<<<<< HEAD
   return <div ref={uiRef}></div>;
+=======
+  return <div className="swagger-ui-container" ref={uiRef}></div>;
+>>>>>>> 347ad287d1ed04caeeee5e0171bf1e0a64745244
 };
